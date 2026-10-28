@@ -12,7 +12,10 @@ export default function PerClassAnalyticsComponent({ jobId }: AnalyticsProps) {
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        const endpoint = jobId ? `/api/analytics/per-class/${jobId}/` : `/api/analytics/per-class/`;
+        // Nginx reverse proxy ke mutabiq endpoint ko /api/v1/ prefix ke sath update kiya hai
+        const endpoint = jobId
+            ? `/api/v1/analytics/per-class/${jobId}/`
+            : `/api/v1/analytics/per-class/`;
 
         fetch(endpoint, {
             headers: {
@@ -88,7 +91,7 @@ export default function PerClassAnalyticsComponent({ jobId }: AnalyticsProps) {
                                 key={className}
                                 style={{ background: '#f5f5f5', padding: '10px 15px', borderRadius: '6px' }}
                             >
-                                <div style={{ display: 'flex', justifyContent: 'between', marginBottom: '5px' }}>
+                                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '5px' }}>
                                     <strong>{className}</strong>
                                     <span style={{ fontWeight: 'bold', color: '#1890ff' }}>{count}</span>
                                 </div>

@@ -110,7 +110,7 @@ services:
 
   cvat_redis_inmem:
     ports:
-      - '127.0.0.1:6379:6379'
+      - '127.0.0.1:6380:6379'
 
   cvat_redis_ondisk:
     ports:

@@ -55,5 +55,6 @@ urlpatterns = [
     path("api/", include("cvat.apps.iam.urls")),
     path("api/", include("cvat.apps.organizations.urls")),
     path("api/", include(router.urls)),
-    path('', include('cvat.apps.analytics.urls')),
+    path('api/v1/analytics/', include('cvat.apps.analytics.urls')),
+
 ]
