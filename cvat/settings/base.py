@@ -120,6 +120,7 @@ INSTALLED_APPS = [
     "dj_rest_auth",
     "dj_rest_auth.registration",
     "dj_pagination",
+    "cvat.apps.analytics",
     "django_filters",
     "rest_framework",
     "rest_framework.authtoken",
